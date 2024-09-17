@@ -43,15 +43,13 @@ export const BlogProvider = ({ children }) => {
   // Edit a post
   const editPost = async (id, updatedData) => {
     try {
-      const response = await updatePost(id, updatedData);
-      setPosts((prevPosts) =>
-        prevPosts.map((post) => (post._id === id ? response.data : post))
-      );
+      await updatePost(id, updatedData); // Send the updated post data to the backend
+      const updatedPosts = await getAllPosts(); // Re-fetch posts from the server after editing
+      setPosts(updatedPosts.data); // Update the state with the latest posts
     } catch (error) {
       console.error("Error updating post:", error);
     }
   };
-
   // Delete a post
   const removePost = async (id) => {
     try {
