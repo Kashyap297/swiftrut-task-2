@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -23,12 +24,12 @@ const Header = () => {
                 className="hidden md:flex flex-col md:flex-row md:ml-auto mt-3 md:mt-0"
                 id="navbar-collapse"
               >
-                <a
-                  href="#"
+                <Link
+                  to={"/"}
                   className="p-2 lg:px-4 md:mx-2 text-white rounded bg-gradient-to-r from-indigo-500 to-purple-600"
                 >
                   My Feed
-                </a>
+                </Link>
                 <a
                   href="#"
                   className="p-2 lg:px-4 md:mx-2 text-gray-600 rounded hover:bg-gray-200 hover:text-gray-700 transition-colors duration-300"
@@ -55,7 +56,11 @@ const Header = () => {
           <h1 class="font-serif text-4xl text-black ml-auto">Personal Blogs</h1>
           <div class="flex items-center ml-auto mr-5">
             <button class="font-sans flex items-center bg-gradient-to-r from-indigo-500 to-purple-600 text-white hover:from-indigo-600 hover:to-purple-700 text-sm font-medium border-0 rounded-full py-2 px-4 shadow-lg transition-all duration-300 transform hover:scale-105 focus:outline-none">
-              <a href="#" class="no-underline flex items-center text-white">
+              <Link
+                to={"/createblog"}
+                href="#"
+                class="no-underline flex items-center text-white"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -72,7 +77,7 @@ const Header = () => {
                   <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z" />
                 </svg>
                 Create Blog
-              </a>
+              </Link>
             </button>
           </div>
         </header>
