@@ -30,11 +30,11 @@ export const BlogProvider = ({ children }) => {
     fetchPosts();
   }, []); // Only run this once on component mount
 
-  // Create a new post
   const addPost = async (postData) => {
     try {
-      const response = await createPost(postData);
-      setPosts((prevPosts) => [response.data, ...prevPosts]); // Add the new post optimistically
+      await createPost(postData); // Wait for the post to be created in the backend
+      const updatedPosts = await getAllPosts(); // Re-fetch posts from the server
+      setPosts(updatedPosts.data); // Update the posts in the state
     } catch (error) {
       console.error("Error creating post:", error);
     }

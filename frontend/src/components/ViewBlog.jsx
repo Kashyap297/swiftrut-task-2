@@ -38,6 +38,7 @@ const ViewBlog = () => {
       >
         Edit
       </button>
+      lorem500
     </div>
   );
 };

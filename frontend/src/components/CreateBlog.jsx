@@ -11,14 +11,13 @@ const CreateBlog = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     if (!title || !content) {
       setErrorMessage("Title and Content are required.");
       return;
     }
 
     try {
-      await addPost({ title, content });
+      await addPost({ title, content }); // Add post via BlogContext
       // Redirect to the home page where all blogs are listed
       navigate("/");
     } catch (error) {
