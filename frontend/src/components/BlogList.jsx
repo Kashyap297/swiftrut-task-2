@@ -11,10 +11,10 @@ const BlogList = () => {
 
   return (
     <div className="container mx-auto mt-24 py-10 px-6">
-      <h1 className="text-4xl font-bold text-center text-gray-800 mb-8">
+      {/* <h1 className="text-4xl font-bold text-center text-gray-800 mb-8">
         All Blog Posts
-      </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      </h1> */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-24">
         {posts.length > 0 ? (
           posts.map((post) => (
             <div key={post._id} className="bg-white rounded-lg shadow-md p-6">
@@ -36,7 +36,9 @@ const BlogList = () => {
             </div>
           ))
         ) : (
-          <div>No posts available.</div>
+          <div className="text-4xl font-bold text-center text-gray-800 mb-8">
+            No posts available.
+          </div>
         )}
       </div>
     </div>

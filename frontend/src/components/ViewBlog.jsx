@@ -23,23 +23,30 @@ const ViewBlog = () => {
 
   if (!post) return <div>Loading...</div>;
   return (
-    <div className="container mx-auto py-4">
-      <h1 className="text-3xl">{post.title}</h1>
-      <p>{post.content}</p>
-      <button
-        onClick={handleDelete}
-        className="bg-red-500 text-white px-4 py-2"
-      >
-        Delete
-      </button>
-      <button
-        onClick={() => navigate(`/edit/${post._id}`)}
-        className="bg-blue-500 text-white px-4 py-2 ml-2"
-      >
-        Edit
-      </button>
-      lorem500
-    </div>
+    <>
+      <div class="relative p-4">
+        <div class="max-w-3xl mx-auto">
+          <div class="mt-3 bg-white rounded-b lg:rounded-b-none lg:rounded-r flex flex-col justify-between leading-normal">
+            <div class="mt-48">
+              <h3 class="text-2xl font-bold my-5">{post.title}</h3>
+              <p class="text-base leading-8 my-5">{post.content}</p>
+              <button
+                onClick={handleDelete}
+                className="bg-red-500 text-white px-4 py-2 bg-gradient-to-r from-red-500 to-orange-600 rounded-lg"
+              >
+                Delete
+              </button>
+              <button
+                onClick={() => navigate(`/edit/${post._id}`)}
+                className="bg-blue-500 text-white px-4 py-2 ml-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg"
+              >
+                Edit Blog
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 

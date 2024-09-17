@@ -21,6 +21,8 @@ function App() {
               <Routes>
                 <Route path="/" element={<BlogList />} />
                 <Route path="/createblog" element={<CreateBlog />} />
+                <Route path="/posts/:id" element={<ViewBlog />} />
+                <Route path="/edit/:id" element={<EditBlogs />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </div>
