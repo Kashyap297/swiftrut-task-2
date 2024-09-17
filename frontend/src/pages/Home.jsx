@@ -1,10 +1,8 @@
-import React from 'react'
+import React from "react";
+import BlogList from "../components/BlogList";
 
 const Home = () => {
-  return (
-    <div>Home</div>
-    
-  )
-}
+  return <div>{/* <BlogList /> */}</div>;
+};
 
-export default Home
+export default Home;
