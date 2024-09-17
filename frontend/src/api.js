@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:8000/api", // Change this if you deployed the API
+  baseURL: "https://swiftrut-task-2-nine.vercel.app/api",
 });
 
 export const getAllPosts = () => api.get("/posts");
