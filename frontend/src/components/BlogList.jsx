@@ -79,7 +79,7 @@ const BlogList = () => {
                     </div>
                     <p className="text-base leading-8 my-5">
                       {post.content
-                        ? post.content.substring(0, 200)
+                        ? post.content.substring(0, 300)
                         : "No content available"}
                       ...
                     </p>
